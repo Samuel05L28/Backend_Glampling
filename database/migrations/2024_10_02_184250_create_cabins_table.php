@@ -16,11 +16,18 @@ return new class extends Migration
             $table->string('name', 40);
             //Nivel FK
             $table->foreignId('cabinlevel_id');
+            //Service FK
+            $table->foreignId('service_id');
             $table->integer('capacity')->unsigned();
             $table->timestamps();
 
             $table->foreign('cabinlevel_id')
                 ->references('id')->on('cabin_levels')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
+            
+            $table->foreign('service_id')
+                ->references('id')->on('service')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
         });
