@@ -14,19 +14,19 @@ return new class extends Migration
         Schema::create('cabin_service', function (Blueprint $table) {
             $table->id();
               //Cabins FK
-              $table->foreignId('cabins_id');
+              $table->foreignId('cabin_id');
               //Falta FK de Users
               $table->foreignId("service_id");
-              
+
               $table->timestamps();
-  
-              $table->foreign('cabins_id')
+
+              $table->foreign('cabin_id')
               ->references('id')->on('cabins')
               ->onUpdate('cascade')
               ->onDelete('restrict');
-  
+
               $table->foreign('service_id')
-                  ->references('id')->on('service')
+                  ->references('id')->on('services')
                   ->onUpdate('cascade')
                   ->onDelete('restrict');
 

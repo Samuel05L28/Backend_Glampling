@@ -25,9 +25,9 @@ return new class extends Migration
                 ->references('id')->on('cabin_levels')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
-            
+
             $table->foreign('service_id')
-                ->references('id')->on('service')
+                ->references('id')->on('services')
                 ->onUpdate('cascade')
                 ->onDelete('restrict');
         });
