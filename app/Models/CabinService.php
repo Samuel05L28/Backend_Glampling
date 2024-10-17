@@ -9,6 +9,8 @@ class CabinService extends Model
 {
     use HasFactory;
 
+    protected $table = 'cabin_service';
+
     protected $fillable = [
         'cabins_id',
         'service_id'
